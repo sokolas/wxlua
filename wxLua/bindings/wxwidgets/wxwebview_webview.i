@@ -93,6 +93,7 @@ private:
 #define_string wxWebViewDefaultURLStr  // extern WXDLLIMPEXP_DATA_WEBVIEW(const char) wxWebViewDefaultURLStr[];
 #define_string wxWebViewBackendDefault // extern WXDLLIMPEXP_DATA_WEBVIEW(const char) wxWebViewBackendDefault[];
 #define_string wxWebViewBackendIE      // extern WXDLLIMPEXP_DATA_WEBVIEW(const char) wxWebViewBackendIE[];
+#define_string wxWebViewBackendEdge    // extern WXDLLIMPEXP_DATA_WEBVIEW(const char) wxWebViewBackendEdge[];
 #define_string wxWebViewBackendWebKit  // extern WXDLLIMPEXP_DATA_WEBVIEW(const char) wxWebViewBackendWebKit[];
 
 class wxWebViewFactory : public wxObject
