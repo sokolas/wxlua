@@ -179,7 +179,7 @@ void wxLuaEventCallback::OnEvent(wxEvent *event)
     int oldTop = wxlState.lua_GetTop();
     if (wxlState.wxluaR_GetRef(m_luafunc_ref, &wxlua_lreg_refs_key))
     {
-#if LUA_VERSION_NUM < 502
+#if 0 //LUA_VERSION_NUM < 502 - I use lua 5.2 compat mode for luajit
         // lua_setfenv() is not in Lua 5.2 nor can you set an env for a function anymore
         wxlState.GetGlobals();
         if (wxlState.lua_SetFenv(-2) != 0)
@@ -191,7 +191,7 @@ void wxLuaEventCallback::OnEvent(wxEvent *event)
             wxlState.wxluaT_PushUserDataType(event, event_wxl_type, false);
             wxlState.LuaPCall(1, 0); // one input no returns
         }
-#if LUA_VERSION_NUM < 502
+#if 0 //LUA_VERSION_NUM < 502 - I use lua 5.2 compat mode for luajit
         else
             wxlState.wxlua_Error("wxLua: wxEvtHandler::Connect() in wxLuaEventCallback::OnEvent(), callback function is not a Lua function.");
 #endif // LUA_VERSION_NUM < 502
