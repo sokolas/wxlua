@@ -521,6 +521,20 @@ function( PARSE_WXWIDGETS_LIB_NAMES )
         endif()
     endif()
 
+    # wxWidgets monolithic DLL build using mingw (maybe a new version? not sure where univ goes): lib/libwx_mswu-3.2.dll.a and wxmsw32u_gcc_custom.dll
+    # wx-config output is -lwx_mswu-3.2
+    if ("${wxWidgets_PORTNAME}" STREQUAL "")
+        string(REGEX MATCH "wx_(msw)(univ)?(u)?(d)?-([0-9]\\.[0-9])" _match_msw_mono "${wxWidgets_LIBRARIES}")
+
+        if (NOT "${_match_msw_mono}" STREQUAL "")
+            set(wxWidgets_PORTNAME    "${CMAKE_MATCH_1}" )
+            set(wxWidgets_UNIVNAME    "${CMAKE_MATCH_2}" )
+            set(wxWidgets_UNICODEFLAG "${CMAKE_MATCH_3}" )
+            set(wxWidgets_DEBUGFLAG   "${CMAKE_MATCH_4}" )
+            # set(wxWidgets_LIB_VERSION "${CMAKE_MATCH_5}" )
+        endif()
+    endif()
+
     # wxWidgets GTK1-3 build using configure
     if ("${wxWidgets_PORTNAME}" STREQUAL "")
         string(REGEX MATCH "wx_(gtk[1-3]?)(univ)?(u)?(d)?_core-([0-9].[0-9])" _match_gtk "${wxWidgets_LIBRARIES}")
