@@ -36,6 +36,7 @@
 #include "lua.h"
 #include "lauxlib.h"
 #include "lualib.h"  /* for #define LUA_BITLIBNAME in Lua 5.2 and LuaJIT */
+#include <limits.h> /* for INT_MAX */
 
 /* We install into "bit32" which doesn't conflict with LuaJIT's "bit" */
 #if (LUA_VERSION_NUM < 502)
