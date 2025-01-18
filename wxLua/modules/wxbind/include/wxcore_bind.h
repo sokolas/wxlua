@@ -406,6 +406,7 @@ extern WXDLLIMPEXP_BINDWXCORE wxLuaBinding* wxLuaBinding_wxcore_init();
 
 #if wxLUA_USE_wxNotebook && wxUSE_NOTEBOOK
     #include "wx/notebook.h"
+    #include "wx/simplebook.h"
 #endif // wxLUA_USE_wxNotebook && wxUSE_NOTEBOOK
 
 #if wxLUA_USE_wxPalette && wxUSE_PALETTE
@@ -1144,6 +1145,7 @@ extern WXDLLIMPEXP_DATA_BINDWXCORE(int) wxluatype_wxWindowUpdateLocker;
 #if wxLUA_USE_wxNotebook && wxUSE_NOTEBOOK
     extern WXDLLIMPEXP_DATA_BINDWXCORE(int) wxluatype_wxNotebook;
     extern WXDLLIMPEXP_DATA_BINDWXCORE(int) wxluatype_wxNotebookEvent;
+    extern WXDLLIMPEXP_DATA_BINDWXCORE(int) wxluatype_wxSimplebook;
 #endif // wxLUA_USE_wxNotebook && wxUSE_NOTEBOOK
 
 #if wxLUA_USE_wxPalette && wxUSE_PALETTE

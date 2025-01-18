@@ -5644,6 +5644,15 @@ wx_dataTypeTable =
     Name = "wxSimpleHtmlListBox",
     ValueType = "class",
   },
+  wxSimplebook = {
+    BaseClasses = {
+      [1] = "wxBookCtrlBase",
+    },
+    Condition = "wxLUA_USE_wxNotebook && wxUSE_NOTEBOOK",
+    IsNumber = false,
+    Name = "wxSimplebook",
+    ValueType = "class",
+  },
   wxSingleChoiceDialog = {
     BaseClasses = {
       [1] = "wxDialog",

@@ -9349,6 +9349,157 @@ int wxNotebook_methodCount = sizeof(wxNotebook_methods)/sizeof(wxLuaBindMethod) 
 
 #if wxLUA_USE_wxNotebook && wxUSE_NOTEBOOK
 // ---------------------------------------------------------------------------
+// Bind class wxSimplebook
+// ---------------------------------------------------------------------------
+
+// Lua MetaTable Tag for Class 'wxSimplebook'
+int wxluatype_wxSimplebook = WXLUA_TUNKNOWN;
+
+#if (wxLUA_USE_wxNotebook && wxUSE_NOTEBOOK) && (wxLUA_USE_wxPointSizeRect)
+static wxLuaArgType s_wxluatypeArray_wxLua_wxSimplebook_Create[] = { &wxluatype_wxSimplebook, &wxluatype_wxWindow, &wxluatype_TNUMBER, &wxluatype_wxPoint, &wxluatype_wxSize, &wxluatype_TNUMBER, &wxluatype_TSTRING, NULL };
+static int LUACALL wxLua_wxSimplebook_Create(lua_State *L);
+static wxLuaBindCFunc s_wxluafunc_wxLua_wxSimplebook_Create[1] = {{ wxLua_wxSimplebook_Create, WXLUAMETHOD_METHOD, 2, 7, s_wxluatypeArray_wxLua_wxSimplebook_Create }};
+//     bool Create(wxWindow* parent, wxWindowID id = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = 0, const wxString& name = "wxSimplebook");
+static int LUACALL wxLua_wxSimplebook_Create(lua_State *L)
+{
+    // get number of arguments
+    int argCount = lua_gettop(L);
+    // const wxString name = "wxSimplebook"
+    const wxString name = (argCount >= 7 ? wxlua_getwxStringtype(L, 7) : wxString(wxT("wxSimplebook")));
+    // long style = 0
+    long style = (argCount >= 6 ? (long)wxlua_getnumbertype(L, 6) : 0);
+    // const wxSize size = wxDefaultSize
+    const wxSize * size = (argCount >= 5 ? (const wxSize *)wxluaT_getuserdatatype(L, 5, wxluatype_wxSize) : &wxDefaultSize);
+    // const wxPoint pos = wxDefaultPosition
+    const wxPoint * pos = (argCount >= 4 ? (const wxPoint *)wxluaT_getuserdatatype(L, 4, wxluatype_wxPoint) : &wxDefaultPosition);
+    // wxWindowID id = wxID_ANY
+    wxWindowID id = (argCount >= 3 ? (wxWindowID)wxlua_getnumbertype(L, 3) : wxID_ANY);
+    // wxWindow parent
+    wxWindow * parent = (wxWindow *)wxluaT_getuserdatatype(L, 2, wxluatype_wxWindow);
+    // get this
+    wxSimplebook * self = (wxSimplebook *)wxluaT_getuserdatatype(L, 1, wxluatype_wxSimplebook);
+    // call Create
+    bool returns = (self->Create(parent, id, *pos, *size, style, name));
+    // push the result flag
+    lua_pushboolean(L, returns);
+
+    return 1;
+}
+
+#endif // (wxLUA_USE_wxNotebook && wxUSE_NOTEBOOK) && (wxLUA_USE_wxPointSizeRect)
+
+static wxLuaArgType s_wxluatypeArray_wxLua_wxSimplebook_ShowNewPage[] = { &wxluatype_wxSimplebook, &wxluatype_wxWindow, NULL };
+static int LUACALL wxLua_wxSimplebook_ShowNewPage(lua_State *L);
+static wxLuaBindCFunc s_wxluafunc_wxLua_wxSimplebook_ShowNewPage[1] = {{ wxLua_wxSimplebook_ShowNewPage, WXLUAMETHOD_METHOD, 2, 2, s_wxluatypeArray_wxLua_wxSimplebook_ShowNewPage }};
+//     bool ShowNewPage(wxWindow* page);
+static int LUACALL wxLua_wxSimplebook_ShowNewPage(lua_State *L)
+{
+    // wxWindow page
+    wxWindow * page = (wxWindow *)wxluaT_getuserdatatype(L, 2, wxluatype_wxWindow);
+    // get this
+    wxSimplebook * self = (wxSimplebook *)wxluaT_getuserdatatype(L, 1, wxluatype_wxSimplebook);
+    // call ShowNewPage
+    bool returns = (self->ShowNewPage(page));
+    // push the result flag
+    lua_pushboolean(L, returns);
+
+    return 1;
+}
+
+
+#if (wxLUA_USE_wxNotebook && wxUSE_NOTEBOOK) && (wxLUA_USE_wxPointSizeRect)
+static wxLuaArgType s_wxluatypeArray_wxLua_wxSimplebook_constructor1[] = { &wxluatype_wxWindow, &wxluatype_TNUMBER, &wxluatype_wxPoint, &wxluatype_wxSize, &wxluatype_TNUMBER, &wxluatype_TSTRING, NULL };
+static int LUACALL wxLua_wxSimplebook_constructor1(lua_State *L);
+// static wxLuaBindCFunc s_wxluafunc_wxLua_wxSimplebook_constructor1[1] = {{ wxLua_wxSimplebook_constructor1, WXLUAMETHOD_CONSTRUCTOR, 1, 6, s_wxluatypeArray_wxLua_wxSimplebook_constructor1 }};
+//     wxSimplebook(wxWindow* parent, wxWindowID id = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = 0, const wxString& name = "wxSimplebook");
+static int LUACALL wxLua_wxSimplebook_constructor1(lua_State *L)
+{
+    // get number of arguments
+    int argCount = lua_gettop(L);
+    // const wxString name = "wxSimplebook"
+    const wxString name = (argCount >= 6 ? wxlua_getwxStringtype(L, 6) : wxString(wxT("wxSimplebook")));
+    // long style = 0
+    long style = (argCount >= 5 ? (long)wxlua_getnumbertype(L, 5) : 0);
+    // const wxSize size = wxDefaultSize
+    const wxSize * size = (argCount >= 4 ? (const wxSize *)wxluaT_getuserdatatype(L, 4, wxluatype_wxSize) : &wxDefaultSize);
+    // const wxPoint pos = wxDefaultPosition
+    const wxPoint * pos = (argCount >= 3 ? (const wxPoint *)wxluaT_getuserdatatype(L, 3, wxluatype_wxPoint) : &wxDefaultPosition);
+    // wxWindowID id = wxID_ANY
+    wxWindowID id = (argCount >= 2 ? (wxWindowID)wxlua_getnumbertype(L, 2) : wxID_ANY);
+    // wxWindow parent
+    wxWindow * parent = (wxWindow *)wxluaT_getuserdatatype(L, 1, wxluatype_wxWindow);
+    // call constructor
+    wxSimplebook* returns = new wxSimplebook(parent, id, *pos, *size, style, name);
+    // add to tracked window list, it will check validity
+    wxluaW_addtrackedwindow(L, returns);
+    // push the constructed class pointer
+    wxluaT_pushuserdatatype(L, returns, wxluatype_wxSimplebook);
+
+    return 1;
+}
+
+#endif // (wxLUA_USE_wxNotebook && wxUSE_NOTEBOOK) && (wxLUA_USE_wxPointSizeRect)
+
+static int LUACALL wxLua_wxSimplebook_constructor(lua_State *L);
+// static wxLuaBindCFunc s_wxluafunc_wxLua_wxSimplebook_constructor[1] = {{ wxLua_wxSimplebook_constructor, WXLUAMETHOD_CONSTRUCTOR, 0, 0, g_wxluaargtypeArray_None }};
+//     wxSimplebook();
+static int LUACALL wxLua_wxSimplebook_constructor(lua_State *L)
+{
+    // call constructor
+    wxSimplebook* returns = new wxSimplebook();
+    // add to tracked window list, it will check validity
+    wxluaW_addtrackedwindow(L, returns);
+    // push the constructed class pointer
+    wxluaT_pushuserdatatype(L, returns, wxluatype_wxSimplebook);
+
+    return 1;
+}
+
+
+
+
+#if ((wxLUA_USE_wxNotebook && wxUSE_NOTEBOOK) && (wxLUA_USE_wxPointSizeRect))||(wxLUA_USE_wxNotebook && wxUSE_NOTEBOOK)
+// function overload table
+static wxLuaBindCFunc s_wxluafunc_wxLua_wxSimplebook_constructor_overload[] =
+{
+
+#if (wxLUA_USE_wxNotebook && wxUSE_NOTEBOOK) && (wxLUA_USE_wxPointSizeRect)
+    { wxLua_wxSimplebook_constructor1, WXLUAMETHOD_CONSTRUCTOR, 1, 6, s_wxluatypeArray_wxLua_wxSimplebook_constructor1 },
+#endif // (wxLUA_USE_wxNotebook && wxUSE_NOTEBOOK) && (wxLUA_USE_wxPointSizeRect)
+    { wxLua_wxSimplebook_constructor, WXLUAMETHOD_CONSTRUCTOR, 0, 0, g_wxluaargtypeArray_None },
+};
+static int s_wxluafunc_wxLua_wxSimplebook_constructor_overload_count = sizeof(s_wxluafunc_wxLua_wxSimplebook_constructor_overload)/sizeof(wxLuaBindCFunc);
+
+#endif // ((wxLUA_USE_wxNotebook && wxUSE_NOTEBOOK) && (wxLUA_USE_wxPointSizeRect))||(wxLUA_USE_wxNotebook && wxUSE_NOTEBOOK)
+
+void wxLua_wxSimplebook_delete_function(void** p)
+{
+    wxSimplebook* o = (wxSimplebook*)(*p);
+    delete o;
+}
+
+// Map Lua Class Methods to C Binding Functions
+wxLuaBindMethod wxSimplebook_methods[] = {
+#if (wxLUA_USE_wxNotebook && wxUSE_NOTEBOOK) && (wxLUA_USE_wxPointSizeRect)
+    { "Create", WXLUAMETHOD_METHOD, s_wxluafunc_wxLua_wxSimplebook_Create, 1, NULL },
+#endif // (wxLUA_USE_wxNotebook && wxUSE_NOTEBOOK) && (wxLUA_USE_wxPointSizeRect)
+
+    { "ShowNewPage", WXLUAMETHOD_METHOD, s_wxluafunc_wxLua_wxSimplebook_ShowNewPage, 1, NULL },
+
+#if ((wxLUA_USE_wxNotebook && wxUSE_NOTEBOOK) && (wxLUA_USE_wxPointSizeRect))||(wxLUA_USE_wxNotebook && wxUSE_NOTEBOOK)
+    { "wxSimplebook", WXLUAMETHOD_CONSTRUCTOR, s_wxluafunc_wxLua_wxSimplebook_constructor_overload, s_wxluafunc_wxLua_wxSimplebook_constructor_overload_count, 0 },
+#endif // ((wxLUA_USE_wxNotebook && wxUSE_NOTEBOOK) && (wxLUA_USE_wxPointSizeRect))||(wxLUA_USE_wxNotebook && wxUSE_NOTEBOOK)
+
+    { 0, 0, 0, 0 },
+};
+
+int wxSimplebook_methodCount = sizeof(wxSimplebook_methods)/sizeof(wxLuaBindMethod) - 1;
+
+#endif  // wxLUA_USE_wxNotebook && wxUSE_NOTEBOOK
+
+
+#if wxLUA_USE_wxNotebook && wxUSE_NOTEBOOK
+// ---------------------------------------------------------------------------
 // Bind class wxNotebookEvent
 // ---------------------------------------------------------------------------
 

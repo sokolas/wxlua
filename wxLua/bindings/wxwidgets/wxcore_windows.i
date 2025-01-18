@@ -644,6 +644,50 @@ class wxNotebook : public wxBookCtrlBase
 };
 
 // ---------------------------------------------------------------------------
+// wxSimplebook
+
+#include "wx/simplebook.h"
+
+class wxSimplebook : public wxBookCtrlBase
+{
+
+    wxSimplebook();
+    wxSimplebook(wxWindow* parent, wxWindowID id = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = 0, const wxString& name = "wxSimplebook");
+    bool Create(wxWindow* parent, wxWindowID id = wxID_ANY, const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = 0, const wxString& name = "wxSimplebook");
+
+    //void SetEffects(wxShowEffect showEffect, wxShowEffect hideEffect);
+    //void SetEffect(wxShowEffect effect);
+    //void SetEffectsTimeouts(unsigned showTimeout, unsigned hideTimeout);
+    //void SetEffectTimeout(unsigned timeout);
+    bool ShowNewPage(wxWindow* page);
+
+
+    // NOTE: All remmed out functions are located in wxBookCtrlBase
+
+    //bool AddPage(wxNotebookPage* page, const wxString& text, bool select = false, int imageId = -1);
+    //void AdvanceSelection(bool forward = true);
+    //void AssignImageList(wxImageList* imageList);
+    //bool DeleteAllPages();
+    //bool DeletePage(int page);
+    //wxWindow* GetCurrentPage() const;
+    //wxImageList* GetImageList() const;
+    //wxNotebookPage* GetPage(int page);
+    //int GetPageCount() const;
+    //int GetPageImage(int nPage) const;
+    //wxString GetPageText(int nPage) const;
+    //int GetSelection() const;
+
+    //bool InsertPage(int index, wxNotebookPage* page, const wxString& text, bool select = false, int imageId = -1);
+    //bool RemovePage(int page);
+    //void SetImageList(wxImageList* imageList);
+    //void SetPageSize(const wxSize& size);
+    //bool SetPageImage(int page, int image);
+    //bool SetPageText(int page, const wxString& text);
+    //int  SetSelection(int page);
+};
+
+
+// ---------------------------------------------------------------------------
 // wxNotebookEvent
 
 class %delete wxNotebookEvent : public wxBookCtrlBaseEvent

@@ -5533,6 +5533,7 @@ static const char* wxluaclassname_wxSearchCtrl = "wxSearchCtrl";
 static const char* wxluaclassname_wxSetCursorEvent = "wxSetCursorEvent";
 static const char* wxluaclassname_wxShowEvent = "wxShowEvent";
 static const char* wxluaclassname_wxSimpleHelpProvider = "wxSimpleHelpProvider";
+static const char* wxluaclassname_wxSimplebook = "wxSimplebook";
 static const char* wxluaclassname_wxSingleChoiceDialog = "wxSingleChoiceDialog";
 static const char* wxluaclassname_wxSize = "wxSize";
 static const char* wxluaclassname_wxSizeEvent = "wxSizeEvent";
@@ -6061,6 +6062,8 @@ static const char* wxluabaseclassnames_wxShowEvent[] = { wxluaclassname_wxEvent,
 static wxLuaBindClass* wxluabaseclassbinds_wxShowEvent[] = { NULL };
 static const char* wxluabaseclassnames_wxSimpleHelpProvider[] = { wxluaclassname_wxHelpProvider, NULL };
 static wxLuaBindClass* wxluabaseclassbinds_wxSimpleHelpProvider[] = { NULL };
+static const char* wxluabaseclassnames_wxSimplebook[] = { wxluaclassname_wxBookCtrlBase, NULL };
+static wxLuaBindClass* wxluabaseclassbinds_wxSimplebook[] = { NULL };
 static const char* wxluabaseclassnames_wxSingleChoiceDialog[] = { wxluaclassname_wxDialog, NULL };
 static wxLuaBindClass* wxluabaseclassbinds_wxSingleChoiceDialog[] = { NULL };
 static const char* wxluabaseclassnames_wxSizeEvent[] = { wxluaclassname_wxEvent, NULL };
@@ -7297,6 +7300,9 @@ extern void wxLua_wxWindowUpdateLocker_delete_function(void** p);
     extern wxLuaBindMethod wxNotebookEvent_methods[];
     extern int wxNotebookEvent_methodCount;
     extern void wxLua_wxNotebookEvent_delete_function(void** p);
+    extern wxLuaBindMethod wxSimplebook_methods[];
+    extern int wxSimplebook_methodCount;
+    extern void wxLua_wxSimplebook_delete_function(void** p);
 #endif // wxLUA_USE_wxNotebook && wxUSE_NOTEBOOK
 
 #if wxLUA_USE_wxPalette && wxUSE_PALETTE
@@ -8547,6 +8553,10 @@ wxLuaBindClass* wxLuaGetClassList_wxcore(size_t &count)
 #if wxLUA_USE_wxHelpController && wxUSE_HELP
         { wxluaclassname_wxSimpleHelpProvider, wxSimpleHelpProvider_methods, wxSimpleHelpProvider_methodCount, NULL, &wxluatype_wxSimpleHelpProvider, wxluabaseclassnames_wxSimpleHelpProvider, wxluabaseclassbinds_wxSimpleHelpProvider, NULL, NULL, NULL, 0, &wxLua_wxSimpleHelpProvider_delete_function, }, 
 #endif // wxLUA_USE_wxHelpController && wxUSE_HELP
+
+#if wxLUA_USE_wxNotebook && wxUSE_NOTEBOOK
+        { wxluaclassname_wxSimplebook, wxSimplebook_methods, wxSimplebook_methodCount, CLASSINFO(wxSimplebook), &wxluatype_wxSimplebook, wxluabaseclassnames_wxSimplebook, wxluabaseclassbinds_wxSimplebook, NULL, NULL, NULL, 0, &wxLua_wxSimplebook_delete_function, }, 
+#endif // wxLUA_USE_wxNotebook && wxUSE_NOTEBOOK
 
 #if wxUSE_CHOICEDLG && wxLUA_USE_wxSingleChoiceDialog
         { wxluaclassname_wxSingleChoiceDialog, wxSingleChoiceDialog_methods, wxSingleChoiceDialog_methodCount, CLASSINFO(wxSingleChoiceDialog), &wxluatype_wxSingleChoiceDialog, wxluabaseclassnames_wxSingleChoiceDialog, wxluabaseclassbinds_wxSingleChoiceDialog, NULL, NULL, NULL, 0, &wxLua_wxSingleChoiceDialog_delete_function, }, 
